@@ -5,7 +5,7 @@ function Message() {
 	return (
 		<div className="col-start-4 col-end-13 relative h-screen flex flex-col">
 			{/* user details */}
-			<div className="bg-white p-4 drop-shadow-xl">
+			<div className="bg-gray-100 p-4">
 				<span className="font-bold text-xl">User</span>
 			</div>
 
@@ -31,7 +31,7 @@ function Message() {
 			</div>
 
 			{/* text message box */}
-			<form className="flex items-center w-full bg-white">
+			<form className="flex items-center w-full bg-gray-100 py-2">
 				<textarea className="border-gray-500 border-2 p-2 rounded-xl focus:outline-none resize-none w-full" required spellCheck minLength={1} rows="1" />
 				<Tooltip title="Send">
 					<IconButton aria-label="send message" size="large">
