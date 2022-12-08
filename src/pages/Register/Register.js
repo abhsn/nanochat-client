@@ -1,9 +1,11 @@
 import { Button, TextField } from "@mui/material";
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 function Register() {
 	const [error, setError] = useState(false);
+	const navigate = useNavigate();
 
 	const { signUp } = useContext(AuthContext);
 
@@ -16,7 +18,8 @@ function Register() {
 		const confirm = form.confirm.value;
 		if (password === confirm) {
 			signUp(email, password)
-				.then(result => console.log(result));
+				.then(result => { navigate('/') })
+				.catch(err => setError(err.message));
 		} else {
 			setError('Password does not match');
 		}
